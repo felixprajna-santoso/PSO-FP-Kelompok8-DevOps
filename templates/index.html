@@ -44,25 +44,25 @@
                         <td>{{row.email}}</td>
                         <td>{{row.phone}}</td>
                         <td>
-                            <a href="" class="btn btn-warning btn-xs" data-bs-toggle="modal" data-bs-target="#modal-edit">Edit</a>
+                            <a href="/update/{{row.id}}" class="btn btn-warning btn-xs" data-bs-toggle="modal" data-bs-target="#modal-edit{{row.id}}">Edit</a>
                             <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure You Want to Delete')">Delete</a>
                         </td>
                     </tr>
 
-                    <div id="modal-edit" class="modal fade" role="dialog">
+                    <div id="modal-edit{{row.id}}" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">Update Information</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="" method="POST">
+                                    <form action="{{url_for('update')}}" method="POST">
 
                                         <div class="form-group">
 
                                             <label>Name:</label>
-                                            <input type="hidden" name="id" value="id">
-                                            <input type="text" class="form-control" name="name" value="change">
+                                            <input type="hidden" name="id" value="{{row.id}}">
+                                            <input type="text" class="form-control" name="name" value="{{row.name}}">
 
                                         </div>
 
@@ -70,14 +70,14 @@
                                             <div class="form-group">
 
                                             <label>Email:</label>
-                                            <input type="email" class="form-control" name="email" value="change">
+                                            <input type="email" class="form-control" name="email" value="{{row.email}}">
 
                                         </div>
 
                                             <div class="form-group">
 
                                             <label>Phone:</label>
-                                            <input type="tel" class="form-control" name="phone" value="change">
+                                            <input type="tel" class="form-control" name="phone" value="{{row.phone}}">
 
                                         </div>
 
