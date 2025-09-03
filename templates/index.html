@@ -5,6 +5,42 @@
 
 {% block body %}
 
-<h1>TEST</h1>
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+
+            <div class="p-5 mb-4 bg-light rounded-3">
+
+
+                <h2>Manage <b>Employees</b> <button type="button" class="btn btn-success float-end" data-toggle="modal" data-target="#myContent">Add New Employee</button></h2>
+
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+
+                    <tr>
+                        <td>01</td>
+                        <td>John</td>
+                        <td>John.Doe@gmail.com</td>
+                        <td>0123456789</td>
+                        <td>
+                            <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="modal-edit">Edit</a>
+                            <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure You Want to Delete')">Delete</a>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+
+        </div> 
+    </div>
+</div>
 
 {% endblock %}
