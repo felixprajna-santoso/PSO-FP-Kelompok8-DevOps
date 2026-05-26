@@ -1,0 +1,18 @@
+# Menggunakan OS Linux ringan dengan Python 3.9
+FROM python:3.9-slim
+
+# Menentukan folder kerja di dalam kontainer
+WORKDIR /app
+
+# Menyalin file requirement dan menginstalnya
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Menyalin seluruh source code ke dalam kontainer
+COPY . .
+
+# Membuka port 5000 (port default Flask)
+EXPOSE 5000
+
+# Perintah untuk menjalankan aplikasi
+CMD ["python", "app.py"]
